@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <div class="logo">
+            <h1>Perfume Paradise</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero" data-lang-key="home">Home</a></li>
+                <li><a href="#top-sold" data-lang-key="products">Products</a></li>
+                <li><a href="#about" data-lang-key="about">About</a></li>
+                <li><a href="#contact" data-lang-key="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="km">Khmer</option>
+                <option value="zh">Chinese</option>
+            </select>
+            <button id="login-btn" data-lang-key="login"><i class="fas fa-user"></i> Login</button>
+            <button id="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="hero">
+        <div class="hero-content">
+            <h2 data-lang-key="welcome">Welcome to Perfume Paradise</h2>
+            <p data-lang-key="hero-text">Discover the finest fragrances from around the world</p>
+            <button id="shop-btn" data-lang-key="shop-now"><i class="fas fa-shopping-bag"></i> Shop Now</button>
+        </div>
+    </section>
+
+    <section id="top-sold">
+        <h2 data-lang-key="top-ten-products">Top 10 Products</h2>
+        <div class="slider-container">
+            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider">
+                <div class="slider-track">
+                    <!-- Top sold products will be loaded here -->
+                </div>
+            </div>
+            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 data-lang-key="featured-products">Featured Products</h2>
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search perfumes..." data-lang-key="search">
+            <select id="category-filter">
+                <option value="all" data-lang-key="all-categories">All Categories</option>
+                <option value="floral">Floral</option>
+                <option value="woody">Woody</option>
+                <option value="oriental">Oriental</option>
+                <option value="fresh">Fresh</option>
+            </select>
+        </div>
+        <div id="products-grid" class="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 data-lang-key="about">About Us</h2>
+        <p>Perfume Paradise is your ultimate destination for premium fragrances. We offer a wide range of perfumes from around the world, ensuring you find the perfect scent for every occasion.</p>
+    </section>
+
+    <section id="contact">
+        <h2 data-lang-key="contact">Contact Us</h2>
+        <p>Get in touch with us for any inquiries or support.</p>
+        <p>Email: info@perfumeparadise.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Perfume Paradise. All rights reserved.</p>
+        <nav>
+            <a href="#hero">Home</a> | <a href="#products">Products</a> | <a href="#about">About</a> | <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-lang-key="shopping-cart">Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p data-lang-key="total">Total: $<span id="cart-total">0</span></p>
+                <button id="checkout-btn" data-lang-key="checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-lang-key="login">Login</h2>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" data-lang-key="login">Login</button>
+            </form>
+            <p data-lang-key="no-account"><a href="#" id="register-link" data-lang-key="register">Register</a></p>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-lang-key="register">Register</h2>
+            <form id="register-form">
+                <input type="text" id="reg-name" placeholder="Name" required>
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit" data-lang-key="register">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="order-history-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-lang-key="order-history">Order History</h2>
+            <div id="order-history-content"></div>
+        </div>
+    </div>
+
+    
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
